@@ -1,0 +1,117 @@
+:root{
+    /* colors */
+    --theme-color:#7F0BF3;
+    --black-color:#181515;
+    --dark-color:#231E1E;
+    --text-color:#F2F2F2;
+    --grey-text:#898989;
+
+    /* weights */
+    --normal:400;
+    --medium:500;
+    --bold:700;
+
+    /* spaces */
+    --small:1.6;
+    --optimal:3.2;
+    --large:6.4;
+
+    /* font-family */
+    --default-font:'Roboto', sans-serif;
+    --monospace:'Roboto Mono', monospace;
+}
+
+/* font-imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@300;400&display=swap');
+
+*,*::before,*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+    font-family: var(--default-font);
+    background-color: var(--black-color);
+    color:var(--text-color);
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.login-card{
+    width:40rem;
+    max-width:min(50rem,85vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-color);
+    box-shadow: 3px 3px 3px 1px #000;
+    border-radius: 0.8rem;
+    margin-top:4rem;
+ }
+
+ .card-title{
+    margin:16rem 1.6rem 2rem 1.6rem;
+    padding:1.6rem;
+    font-size:2.4rem;
+    font-weight: var(--medium);
+    text-transform: uppercase;
+    text-align: center;
+ }
+
+input{
+    width:30rem;
+    background-color: var(--black-color);
+    border:1px solid var(--grey-text);
+    border-radius: 0.8rem;
+    padding:1rem 1.6rem;
+    margin:0.8rem;
+    outline:none;
+    transition: transform 125ms linear;
+    text-align: left;
+    /* text-align: left center; */
+    color:var(--text-color);
+    font-family: var(--monospace);
+    font-weight: 300;
+}
+
+input:nth-child(1){
+    margin-top:4rem;
+}
+
+input:focus{
+    outline:2px solid var(--theme-color);
+    filter:drop-shadow(3px 3px 0.3rem var(--themeColor));
+    transform: scale(1.015);
+    /* border:none; */
+}
+
+.button-theme{
+    width:30rem;
+    background-color: var(--theme-color);
+    color:var(--text-color);
+    text-transform:uppercase;
+    font-weight: var(--bold);
+    font-size:calc(1.8rem);
+    padding:1rem 9.6rem;
+    border-radius:0.8rem;
+    margin:3.2rem 1.6rem 4rem 1.5rem;
+    outline: none;
+    border: none;
+}
+
+.button-theme:hover,.button-theme:active,.button-theme:focus{
+    perspective: 10rem;
+    transform: scale(1.015);
+}
