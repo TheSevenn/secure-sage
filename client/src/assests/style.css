@@ -98,7 +98,7 @@ input:focus{
 }
 
 .button-theme{
-    width:30rem;
+    width:30rem; 
     background-color: var(--theme-color);
     color:var(--text-color);
     text-transform:uppercase;
@@ -114,4 +114,19 @@ input:focus{
 .button-theme:hover,.button-theme:active,.button-theme:focus{
     perspective: 10rem;
     transform: scale(1.015);
+}
+
+.nav-bar{
+    background-color: var(--theme-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.2rem;
+}
+
+.brand-name{
+    font-size:1.6rem;
+    font-weight: var(--bold);
+    color: var(--dark-color);
 }
