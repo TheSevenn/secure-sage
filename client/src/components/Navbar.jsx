@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className="group-section">
         <em className="greet-user">  Hi, Admin   </em>
         <Link to="/login">
-          <button className="button-secondary">Logout
+          <button className="button-secondary" tabIndex={-1}>Logout
           </button>
         </Link>
       </div>

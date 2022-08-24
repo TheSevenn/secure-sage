@@ -39,7 +39,7 @@ export default function Login(){
             <Password head = {"Passwords:"} 
             name = {"password"} fetchPassword = {fetchPassword} />
             <Link to="/home">
-            <button className="button-theme" onClick = {handleClick}>Login</button>
+            <button className="button-theme" tabIndex={-1} onClick = {handleClick}>Login</button>
             </Link>
             </div>
         </React.Fragment>
