@@ -246,14 +246,6 @@ section div h1{
                 2px 2px 2px 1px #000;
 }
 
-.account-card p:nth-child(1){
-    font-family: inherit;
-    font-size: 1.8rem;
-    text-transform: capitalize;
-    color:var(--theme-color);
-    font-weight: var(--medium);
-}
-
 .account-card p{
     font-family: var(--monospace);
     font-size: 1.6rem;
@@ -261,7 +253,18 @@ section div h1{
     padding: 0.8rem;
     color:var(--grey-text);
     margin:0.8rem;
+    text-align: left;
 }
+
+.account-card p strong{
+    font-family: inherit;
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    color:var(--theme-color);
+    font-weight: var(--medium);
+    text-align: left;
+}
+
 
 .account-card button{
     padding:0.8rem;
@@ -281,4 +284,21 @@ section div h1{
 .account-card button:nth-child(3){
     background-color: transparent;
     color: var(--theme-color);
+}
+
+.account-card input{
+    width:15rem;
+    background-color: var(--dark-color);
+    border:0.1px solid var(--grey-text);
+    border-radius: 0.8rem;
+    padding:0.8rem 1rem;
+    margin: 1.6rem 0.8rem;
+    outline:none;
+    transition: transform 125ms linear;
+    text-align: left;
+    /* text-align: left center; */
+    color:var(--text-color);
+    font-family: var(--monospace);
+    font-weight: 300;
+    font-size:1.3rem;
 }

@@ -1,6 +1,8 @@
 import React from "react";
 
 import { editAccount } from "../../api/accountRequests";
+import CloseIcon from "@mui/icons-material/Close";
+import DoneIcon from "@mui/icons-material/Done";
 
 export default function Update({onClick,account}){
 
@@ -31,11 +33,11 @@ export default function Update({onClick,account}){
       function handleClickSaveChanges(e){
           e.preventDefault();
           editAccount(account._id,update).then(res=>console.log("response is: "+res.data)).catch(err=>console.log("error occured while updating: "+err));
+          onClick();
       }
 
        return (
         <React.Fragment>
-            <section>
                 <h1>Edit Account Details</h1>
 
                 <input type="text" name="accountName" placeholder="accont name" value = {update.accountName}
@@ -53,9 +55,8 @@ export default function Update({onClick,account}){
                 <input type="text" name="tags" placeholder="tags" value={update.tags}
                 onChange={handleUpdateFor_tags} />
 
-                <button type="submit" onClick={onClick}>cancel</button>
-                <button type="submit" onClick={handleClickSaveChanges}>Save Changes</button>
-            </section>
+                <button type="submit" onClick={onClick}><CloseIcon/></button>
+                <button type="submit" onClick={handleClickSaveChanges}><DoneIcon/></button>
         </React.Fragment>
        )
 }
