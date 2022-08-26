@@ -51,7 +51,7 @@ export default function AddEntry() {
              title="add new account">+</button>
 
             <div className="add-account-card">
-            <h1>Add New Account</h1>
+            <h1 className="add-account__title">Add New Account</h1>
             <input required type="text" name="accountName" placeholder="accont name" onChange={handleChangeFor_accountName} />
             <input type="text" name="accountEmail" placeholder="email/phone" onChange={handleChangeFor_email} />
             <input type="text" name="userName" placeholder="user name" onChange={handleChangeFor_userName} />

@@ -12,11 +12,17 @@ export default function Entries() {
     return (
         <React.Fragment>
             <section className="all-accounts-section">
-                {
+                <h1 className="all-accounts__title">Your Accounts</h1>
+                <div className="account-container__card">
+                { 
                     accounts.map((account, index) => {
+                        if(account)
                         return <Entry account={account} key={index} />
+
+                        return <p>Nothing to see here. Add some accounts</p>
                     })
                 }
+                </div>
             </section>
         </React.Fragment>
     )

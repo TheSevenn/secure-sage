@@ -26,6 +26,7 @@ export function IconProvider({icon}){
    
     switch(icon){
         case "facebook": return <FacebookIcon style={IconStyles}/>
+        case "google": 
         case "gmail": return <GoogleIcon style={IconStyles}/>
         case "instagram": return <InstagramIcon style={IconStyles}/>
         case "apple": return <AppleIcon style={IconStyles}/>
