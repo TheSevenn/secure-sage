@@ -8,8 +8,10 @@ export default function Home(){
     return (
         <React.Fragment>
             <Navbar/>
-            <AddEntry/>
-            <Entries/>
+            <section className="main-accounts-section">
+               <AddEntry/>
+               <Entries/>
+            </section>
         </React.Fragment>
     )
 }

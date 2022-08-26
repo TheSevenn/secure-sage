@@ -1,6 +1,7 @@
 import React from "react";
 
 import { saveAccount } from "../api/accountRequests";
+
 export default function AddEntry() {
 
     const [account, setAccount] = React.useState({
@@ -31,6 +32,10 @@ export default function AddEntry() {
         setAccount({ ...account, tags: e.target.value });
         console.log(account);
     }
+
+    function handleClickFor_AddButton(){
+        console.log("clicked>>>");
+    }
    
     function handleClick(e) {
            console.log("clicked");
@@ -40,15 +45,22 @@ export default function AddEntry() {
     }
     return (
         <React.Fragment>
-            <h1>Add New Account Details</h1>
+            <section className="add-account-container">
+            <button className="add-account-button"
+             onClick={handleClickFor_AddButton}
+             title="add new account">+</button>
 
+            <div className="add-account-card">
+            <h1 className="add-account__title">Add New Account</h1>
             <input required type="text" name="accountName" placeholder="accont name" onChange={handleChangeFor_accountName} />
             <input type="text" name="accountEmail" placeholder="email/phone" onChange={handleChangeFor_email} />
             <input type="text" name="userName" placeholder="user name" onChange={handleChangeFor_userName} />
             <input required type="text" name="password" placeholder="password/pin" onChange={handleChangeFor_password} />
             <input type="text" name="tags" placeholder="tags" onChange={handleChangeFor_tags} />
 
-            <button type="submit" onClick={handleClick}>Add Account</button>
+            <button type="submit" className="button-modified" onClick={handleClick}>Add Account</button>
+            </div>
+            </section>
         </React.Fragment>
     )
 }
