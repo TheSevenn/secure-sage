@@ -37,10 +37,8 @@ export default function AddEntry() {
         console.log("clicked>>>");
     }
    
-    function handleClick(e) {
+    function handleClick() {
            console.log("clicked");
-           e.preventDefault();
-
            saveAccount(account).then(res=>console.log("Account saved and respond recieved: "+res.data)).catch(err=>console.log("Error occured: "+err));
     }
     return (
@@ -54,7 +52,7 @@ export default function AddEntry() {
             <h1 className="add-account__title">Add New Account</h1>
             <input required type="text" name="accountName" placeholder="accont name" onChange={handleChangeFor_accountName} />
             <input type="text" name="accountEmail" placeholder="email/phone" onChange={handleChangeFor_email} />
-            <input type="text" name="userName" placeholder="user name" onChange={handleChangeFor_userName} />
+            <input type="text" name="userName" placeholder="username" onChange={handleChangeFor_userName} />
             <input required type="text" name="password" placeholder="password/pin" onChange={handleChangeFor_password} />
             <input type="text" name="tags" placeholder="tags" onChange={handleChangeFor_tags} />
 

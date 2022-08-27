@@ -70,7 +70,7 @@ button:hover{
  }
 
 input{
-    width:25rem;
+    width:min(25rem,70vw);
     background-color: var(--black-color);
     border:0.1px solid var(--grey-text);
     border-radius: 0.8rem;
@@ -104,7 +104,7 @@ button{
 }
 
 .button-theme{
-    width:30rem; 
+    width:25rem; 
     background-color: var(--theme-color);
     color:var(--text-color);
     text-transform:uppercase;
@@ -113,6 +113,7 @@ button{
     padding:1rem 9.6rem;
     border-radius:0.8rem;
     margin:3.2rem 1.6rem 4rem 1.5rem;
+    box-shadow: 2px 2px 2px var(--muted-theme-color);
 }
 
 button:hover,button:active,button:focus{
@@ -160,6 +161,7 @@ button:hover,button:active,button:focus{
     color:var(--text-color);
     padding:0.8rem 2.4rem;
     border-radius: 0.8rem;
+    box-shadow: 2px 2px 2px #000;
 }
 
 .add-account-container{
@@ -213,8 +215,8 @@ button:hover,button:active,button:focus{
     margin:2.4rem 1.6rem;
     outline: none;
     border: none;
-    color:var(--black-color);
     text-transform: uppercase;
+    box-shadow: 2px 2px 2px  var(--muted-theme-color);
 }
 
 section div > input{
@@ -340,9 +342,21 @@ section h1{
     border-radius: 0.4rem;
     padding: 0.2rem 0.4rem;
     font-size:1.4rem;
-}.account-card p span:last-child{
-    margin-left: 0.8rem;
-    justify-content: center;
+    margin-right: 0.8rem;
+    /* justify-content: center; */
+}
+
+.icon-container {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.icon-container .time-passed{
+    margin:0.4rem;
+    font-size:1.2rem;
+    color:var(--grey-text);
 }
 
 @media only screen and (max-width:1300px){
