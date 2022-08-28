@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 import { deleteAccount } from "../api/accountRequests";
 import { IconProvider } from "./_components/IconProvider";
@@ -30,7 +31,11 @@ export default function Entry({ account }) {
                     showUpdate ? <Update onClick={handleClickCancel}
                         account={account}
                     /> : <React.Fragment>
-                        <span><IconProvider icon={account.accountName} /></span>
+                        
+                        <div className="icon-container">
+                            <IconProvider icon={account.accountName} />
+                            <span className="time-passed">{moment(account.addedAt).startOf('second').fromNow()}</span>
+                        </div>
                         <p><strong>{account.accountName}</strong></p>
                         <p>{account.email}</p>
                         <p>{account.userName}</p>
