@@ -31,7 +31,8 @@ export default function Login(){
 
     return (
         <React.Fragment>
-             <h2 className="card-title">Login to SAGE</h2>
+             <h2 className="card-title" >
+                Login to SAGE</h2>
              <div className="login-card">
             <UserName head = {"User Name:"} 
             name = {"userName"} fetchUserName = {fetchUserName} />

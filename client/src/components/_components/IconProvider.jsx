@@ -23,8 +23,7 @@ import { IconStyles } from "../../assests/styles";
 
 
 export function IconProvider({icon}){
-   
-    switch(icon){
+    switch(icon.toLowerCase()){
         case "facebook": return <FacebookIcon style={IconStyles}/>
         case "google": 
         case "gmail": return <GoogleIcon style={IconStyles}/>
@@ -54,6 +53,7 @@ export function IconProvider({icon}){
         case "steam":
         case "gog":
         case "riot":
+        case "discord":
              return <SportsEsportsIcon style={IconStyles}/>
         default: return <AccountCircleIcon style={IconStyles}/>
     }
