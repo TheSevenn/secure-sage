@@ -11,7 +11,8 @@ dotenv.config({path:"./config/config.env"});
 import loginRouter from "./routes/login.js";
 import connectDB from "./config/connectDB.js";
 import entryRouter from "./routes/entry.js";
-import accountModel from "./models/accountSchema.js";
+
+import {createOwner} from "./db-operations/createOwner.js";
 
 // middlewares
 app.use(cors());
@@ -29,6 +30,8 @@ app.get("/",(req,res)=>{
 app.listen(process.env.PORT||5000,()=>{
   console.log("running at: "+process.env.PORT);
 });
+
+createOwner();
 
 // routing
 app.use('/private',loginRouter);
