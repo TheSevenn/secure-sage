@@ -1,22 +1,30 @@
 
 // default imports
 import express, {urlencoded} from "express";
-import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import session from "express-session";
+import MongoStore from "connect-mongo";
 const app = express();
 dotenv.config({path:"./config/config.env"});
 
 // file imports
-import loginRouter from "./routes/login.js";
+import loginRouter from "./routes/auth.js";
 import connectDB from "./config/connectDB.js";
 import entryRouter from "./routes/entry.js";
 
-import {createOwner} from "./db-operations/createOwner.js";
+
+
 
 // middlewares
-app.use(cors());
+app.use(cors({origin:"http://localhost:3000"}));
 app.use(urlencoded({extended:false}));
+app.use(session({
+  secret:'SECRET',
+  resave:false,
+  saveUninitialized:false,
+  // store:MongoStore.create({mongoUrl:process.env.CONNECTION_URL})
+}));
 app.use(express.json());
 app.use(logger);
 
@@ -31,7 +39,7 @@ app.listen(process.env.PORT||5000,()=>{
   console.log("running at: "+process.env.PORT);
 });
 
-createOwner();
+// createOwner();
 
 // routing
 app.use('/private',loginRouter);

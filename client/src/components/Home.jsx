@@ -4,10 +4,10 @@ import Navbar from "./Navbar";
 import Entries from "./Entries";
 import AddEntry from "./AddEntry";
 
-export default function Home(){
+export default function Home({handleAuth}){
     return (
         <React.Fragment>
-            <Navbar/>
+            <Navbar handleAuth={handleAuth}/>
             <section className="main-accounts-section">
                <AddEntry/>
                <Entries/>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { saveAccount } from "../api/accountRequests";
 
@@ -11,6 +12,8 @@ export default function AddEntry() {
         password: "",
         tags: ""
     });
+
+    const navigate = useNavigate();
 
     function handleChangeFor_accountName(e) {
         setAccount({ ...account, accountName: e.target.value });
@@ -38,8 +41,8 @@ export default function AddEntry() {
     }
    
     function handleClick() {
-           console.log("clicked");
-           saveAccount(account).then(res=>console.log("Account saved and respond recieved: "+res.data)).catch(err=>console.log("Error occured: "+err));
+           saveAccount(account).then(res=>console.log(res.data.message)).catch(err=>console.log("Error occured: "+err));
+           navigate("/");
     }
     return (
         <React.Fragment>

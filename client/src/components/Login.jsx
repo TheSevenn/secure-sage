@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 import UserName, {Password} from "./_components/Input";
 import { authRequest } from "../api/authRequest";
@@ -8,6 +8,7 @@ export default function Login(){
 
     const [userName,setUserName] = React.useState("");
     const [password,setPassword] = React.useState("");
+    const navigate = useNavigate();
     // const [validation,setValidaton] = React.useState(false);
     
     function fetchUserName(data){
@@ -17,16 +18,17 @@ export default function Login(){
         setPassword(data);
     }
 
-    function getAuth(status){
-        // setValidaton(status.authentication);
-    }
-   
     function handleClick(){
-        const details = {
+        const authToken = {
             userName,
             password
         }
-     authRequest(details).then(res=> getAuth(res.data)).catch(error=>console.log("Error occured: "+error));
+      authRequest(authToken).then(res=> {
+        if(res.data.authStatus&&res.data.token){ 
+            localStorage.setItem("token",JSON.stringify(res.data.token));
+            navigate("/home")
+        }else if(!res.data.authStatus) navigate("/login")})
+        .catch(error=>navigate("/login"));
     }
 
     return (
@@ -36,12 +38,9 @@ export default function Login(){
              <div className="login-card">
             <UserName head = {"User Name:"} 
             name = {"userName"} fetchUserName = {fetchUserName} />
-
             <Password head = {"Passwords:"} 
             name = {"password"} fetchPassword = {fetchPassword} />
-            <Link to="/home">
             <button className="button-theme" tabIndex={-1} onClick = {handleClick}>Login</button>
-            </Link>
             </div>
         </React.Fragment>
     )
