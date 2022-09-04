@@ -9,7 +9,6 @@ export default function Login(){
     const [userName,setUserName] = React.useState("");
     const [password,setPassword] = React.useState("");
     const navigate = useNavigate();
-    // const [validation,setValidaton] = React.useState(false);
     
     function fetchUserName(data){
         setUserName(data);
@@ -27,8 +26,8 @@ export default function Login(){
         if(res.data.authStatus&&res.data.token){ 
             localStorage.setItem("token",JSON.stringify(res.data.token));
             navigate("/home")
-        }else if(!res.data.authStatus) navigate("/login")})
-        .catch(error=>navigate("/login"));
+        }else if(!res.data.authStatus) navigate("/")})
+        .catch(error=>navigate("/"));
     }
 
     return (

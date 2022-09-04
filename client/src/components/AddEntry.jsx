@@ -17,23 +17,18 @@ export default function AddEntry() {
 
     function handleChangeFor_accountName(e) {
         setAccount({ ...account, accountName: e.target.value });
-        console.log(account);
     }
     function handleChangeFor_email(e) {
         setAccount({ ...account, email: e.target.value });
-        console.log(account);
     }
     function handleChangeFor_userName(e) {
         setAccount({ ...account, userName: e.target.value });
-        console.log(account);
     }
     function handleChangeFor_password(e) {
         setAccount({ ...account, password: e.target.value });
-        console.log(account);
     }
     function handleChangeFor_tags(e) {
         setAccount({ ...account, tags: e.target.value });
-        console.log(account);
     }
 
     function handleClickFor_AddButton(){
@@ -42,7 +37,7 @@ export default function AddEntry() {
    
     function handleClick() {
            saveAccount(account).then(res=>console.log(res.data.message)).catch(err=>console.log("Error occured: "+err));
-           navigate("/");
+           navigate("/home");
     }
     return (
         <React.Fragment>
@@ -57,7 +52,7 @@ export default function AddEntry() {
             <input type="text" name="accountEmail" placeholder="email/phone" onChange={handleChangeFor_email} />
             <input type="text" name="userName" placeholder="username" onChange={handleChangeFor_userName} />
             <input required type="text" name="password" placeholder="password/pin" onChange={handleChangeFor_password} />
-            <input type="text" name="tags" placeholder="tags" onChange={handleChangeFor_tags} />
+            <input type="text" name="tags" placeholder="tags:comma seperated" onChange={handleChangeFor_tags} />
 
             <button type="submit" className="button-modified" onClick={handleClick}>Add Account</button>
             </div>

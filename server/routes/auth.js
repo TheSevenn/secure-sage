@@ -1,18 +1,12 @@
 import express from "express";
-import session from "express-session";
 const router = express.Router();
 
 import { handleAuth } from "../controllers/handleAuth.js";
-import { protectRoutes } from "../middlewares/protectRoutes.js";
 
 router.get("/login",(req,res)=>{
     res.json("loginPage");
     console.log(req.originalUrl);
 });
-
-// router.post("/auth",passport.authenticate('local'),(req,res)=>{
-//     res.send("good")
-// });
 
 router.post("/auth",(req,res)=>{
   try {

@@ -9,8 +9,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 import { buttonStyles } from "../assests/styles";
 
-export default function Entry({ account }) {
+export default function Entry({ account,counterDelete }) {
     const [showUpdate, setShowUpdate] = React.useState(false);
+    // const [curr,setCurr] = React.useState(0);
+ 
 
     function handleClickEdit() {
         setShowUpdate(true);
@@ -21,8 +23,8 @@ export default function Entry({ account }) {
     }
 
     function handleClickDelete() {
-        console.log("clicked");
         deleteAccount(account._id).then(res => console.log(res)).catch(err => console.log(err));
+        counterDelete();
     }
     return (
         <React.Fragment>
