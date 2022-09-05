@@ -1,17 +1,17 @@
 import React from "react";
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { logOutRequest } from "../api/authRequest";
 
 export default function Navbar() {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handleClick() {
     logOutRequest().then(res => {
       if (res) {
-      navigate("/");
-      localStorage.removeItem("token");
-    }
+        navigate("/");
+        localStorage.removeItem("token");
+      }
     })
       .catch(err => console.log(err));
   }

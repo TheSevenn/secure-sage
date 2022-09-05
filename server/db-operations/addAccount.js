@@ -15,9 +15,3 @@ export const addAccount = (account) => {
     else console.log("account Added");
   })
 }
-// accountModel.findById(2).then(data=>console.log(data.accountName));
-// newAccount.save((err,doc)=>{
-//   if(err) console.log(err);
-
-//   else console.log("added account");
-// })

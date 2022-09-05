@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken";
 
-
 export default function generateToken(email, _id) {
     if (_id)
         return jwt.sign({
