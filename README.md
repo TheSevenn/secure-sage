@@ -1,3 +1,4 @@
+
 # README
 ## SECURE SAGE IS A WEB APPLICATION DEVELOPED WITH MERN STACK TO KEEP AND MANAGE YOUR ACCOUNTS AND PASSWORDS
 
@@ -7,3 +8,6 @@
 - Add tags to remember the account better
 
 - Currently the app doesn't support the other users to login and add accounts.
+
+webapp to keep your accounts and manage passwords
+
