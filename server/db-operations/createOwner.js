@@ -4,11 +4,11 @@ import authModel from "../models/authSchema.js";
 
 export const createOwner=()=>{
 const saltRounds = 10;
-const password = '';
+const password = 'password';
 let newOwner = new authModel({
-    ownerName:"",
-    ownerUserName:"",
-    ownerEmail:"",
+    ownerName:"test",
+    ownerUserName:"test",
+    ownerEmail:"test@test.com",
     ownerPassword: bcrypt.hashSync(password,saltRounds,(err,res)=>{
         return res;
     })
